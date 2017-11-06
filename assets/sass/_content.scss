@@ -1,0 +1,25 @@
+.page-header.size-lg {
+  padding-top: 200px;
+}
+.page-header {
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #ec312e;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 120px;
+  padding-top: 100px;
+  border: none;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}

@@ -1,0 +1,35 @@
+body{
+  font-family: Kanit,sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  color: #7e8890;
+  background-color: #e5e7ed;
+}
+
+a, a:focus, a:hover {
+  color: #ec312e;
+  text-decoration: none;
+  -webkit-transition: color .3s linear;
+  -o-transition: color .3s linear;
+  transition: color .3s linear;
+  outline: 0;
+}
+
+.form-control.focus, .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #b9c6cb;
+  background-color: #f9f9f9;
+}
+
+.btn-main{
+  color: #fff;
+  background-color:#ec312e;
+  border-color: #ff0000;
+}
+.btn-main:hover{
+  color: #fff;
+  background-color:#ff0000;
+  border-color: #ff0000;
+}

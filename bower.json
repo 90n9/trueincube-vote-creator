@@ -1,0 +1,21 @@
+{
+  "name": "trueincube-vote-creator",
+  "authors": [
+    "Narathip Harijiratiwong <tholop@gmail.com>"
+  ],
+  "description": "creator vote content",
+  "main": "",
+  "keywords": [
+    "creator",
+    "vote"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
