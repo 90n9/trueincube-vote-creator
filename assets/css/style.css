@@ -21,8 +21,7 @@ a:focus, a:hover {
   color: #ff0000;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Oswald,sans-serif;
-  letter-spacing: 1px;
+  font-family: 'Athiti', sans-serif;
   margin: 16px 0;
   line-height: 1.4;
 }
@@ -71,7 +70,6 @@ h4 {
 }
 .login-block h1, .login-block h6 {
   color: #96a2b2;
-  letter-spacing: 1px;
 }
 .login-links{
   padding: 15px 5px 0;
@@ -229,10 +227,8 @@ h4 {
   line-height: 28px;
   white-space: nowrap;
   display: block;
-  font-family: Open Sans,sans-serif;
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: 1px;
   padding: 3px 8px;
   border-bottom: 1px solid #f8f9fa;
   color: #7e8890;
@@ -271,7 +267,6 @@ h4 {
   display: inline-block;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 1px;
   padding: 0 12px;
   line-height: 60px;
   -webkit-transition: color .2s linear;
@@ -311,9 +306,7 @@ h4 {
   visibility: visible;
 }
 .nav-menu ul li a {
-  font-family: Open Sans,sans-serif;
   text-transform: none;
-  letter-spacing: 1px;
   line-height: 32px;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -438,7 +431,6 @@ section {
   color: #000;
 }
 .item-block header h4, .item-block header h5, .item-block header h6 {
-  font-family: Open Sans,sans-serif;
   font-weight: 300;
   margin: 0;
 }
