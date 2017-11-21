@@ -1,185 +1,217 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>HandUp - Login</title>
-    <!-- Styles -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="bower_components/themify-icons/css/themify-icons.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Kanit:300,700&amp;subset=thai" rel="stylesheet">
-  </head>
-  <body class="nav-on-header smart-nav bg-alt">
-    <!-- Navigation bar -->
-    <nav class="navbar">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>HandUp - Login</title>
+  <!-- Styles -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="bower_components/themify-icons/css/themify-icons.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Kanit:300,700&amp;subset=thai" rel="stylesheet">
+
+  <script src="bower_components/chart.js/dist/Chart.js"></script>
+</head>
+
+<body class="nav-on-header smart-nav bg-alt">
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="pull-left">
+        <a class="navbar-toggle" href="#" data-toggle="offcanvas">
+          <i class="ti-menu"></i>
+        </a>
+
+        <div class="logo-wrapper">
+          <a class="logo" href="project_list.html">
+            <img src="assets/img/logo.png" alt="logo">
+          </a>
+        </div>
+
+      </div>
+      <!-- END Logo -->
+
+      <!-- User account -->
+      <div class="pull-right">
+
+        <div class="dropdown user-account">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <img src="assets/img/avatar.png" alt="avatar">
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li>
+              <a href="user-login.html">ข้อมูลส่วนตัว</a>
+            </li>
+            <li>
+              <a href="user-forget-pass.html">แพคเกจ</a>
+            </li>
+            <li>
+              <a href="user-register.html">ประวัติการชำระเงิน</a>
+            </li>
+            <li>
+              <a href="#">ออกจากระบบ</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- END User account -->
+    </div>
+  </nav>
+  <!-- END Navigation bar -->
+
+  <!-- Page header -->
+  <header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg)">
+    <div class="container no-shadow">
+      <h1>แบบสอบถามร้านอาหารญี่ปุ่น</h1>
+      <p class="lead">
+        <strong>คนตอบ</strong> 44/100
+        <strong>สิ้นสุดวันที่</strong> 2017-12-31</span>
+      </p>
+    </div>
+  </header>
+  <!-- END Page header -->
+
+  <!-- Main container -->
+  <main>
+    <section class="no-padding-top bg-alt">
       <div class="container">
-        <!-- Logo -->
-        <div class="pull-left">
-          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
-
-          <div class="logo-wrapper">
-            <a class="logo" href="project_list.html"><img src="assets/img/logo.png" alt="logo"></a>
-          </div>
-
-        </div>
-        <!-- END Logo -->
-
-        <!-- User account -->
-        <div class="pull-right">
-          <div class="dropdown user-account">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-              <img src="assets/img/avatar.png" alt="avatar">
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="user-login.html">ข้อมูลส่วนตัว</a></li>
-              <li><a href="user-forget-pass.html">แพคเกจ</a></li>
-              <li><a href="user-register.html">ประวัติการชำระเงิน</a></li>
-              <li><a href="#">ออกจากระบบ</a></li>
-            </ul>
-          </div>
-
-        </div>
-        <!-- END User account -->
-      </div>
-    </nav>
-    <!-- END Navigation bar -->
-  
-    <!-- Page header -->
-    <header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg)">
-      <div class="container no-shadow">
-        <h1>แบบสอบถามร้านอาหารญี่ปุ่น</h1>
-        <p class="lead"><strong>คนตอบ</strong> 46/100 <strong>สิ้นสุดวันที่</strong> 2017-12-31</span></p>
-      </div>
-    </header>
-    <!-- END Page header -->
-
-    <!-- Main container -->
-    <main>
-        <section class="no-padding-top bg-alt">
-          <div class="container">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
-              <li role="presentation"><a href="#design" aria-controls="design" role="tab" data-toggle="tab">Design</a></li>
-              <li role="presentation"><a href="#distribute" aria-controls="distribute" role="tab" data-toggle="tab">Distribute</a></li>
-              <li role="presentation"><a href="#result" aria-controls="result" role="tab" data-toggle="tab">Result</a></li>
-            </ul>
-            <div style="background-color:#fff;padding:20px;border:1px solid #ddd;border-top:none;">
-              <!-- Tab panes -->
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a>
+          </li>
+          <li role="presentation">
+            <a href="#design" aria-controls="design" role="tab" data-toggle="tab">Design</a>
+          </li>
+          <li role="presentation">
+            <a href="#distribute" aria-controls="distribute" role="tab" data-toggle="tab">Distribute</a>
+          </li>
+          <li role="presentation">
+            <a href="#result" aria-controls="result" role="tab" data-toggle="tab">Result</a>
+          </li>
+        </ul>
+        <div style="background-color:#fff;padding:20px;border:1px solid #ddd;border-top:none;">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="overview">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                  <a href="#overview2" aria-controls="home" role="tab" data-toggle="tab">Overall</a>
+                </li>
+                <li role="presentation">
+                  <a href="#chart2" aria-controls="home" role="tab" data-toggle="tab">By Day</a>
+                </li>
+              </ul>
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="overview">Overview Detail</div>
-                <div role="tabpanel" class="tab-pane" id="design">Design Question and answer</div>
-                <div role="tabpanel" class="tab-pane" id="distribute">
-                  
+                <div role="tabpanel" class="tab-pane active" id="overview2">
+                  <canvas id="myChart" width="60%" height="20%"></canvas>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="result">
-                  <div>
-                    <form class="form form-horizontal">
-                      <div class="form-group">
-                        <label class="col-md-3 control-label">แบ่งข้อมูลตาม</label>
-                        <div class="col-md-6">
-                          <select class="form-control">
-                            <option value="channel">ช่องทางการ Vote</option>
-                            <option value="gender">เพศ</option>
-                            <option value="age">อายุ</option>
-                          </select>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div>
-                    <h2>ผลลัพธ์</h2>
-                    <div>
-                      <div>
-                        <style>
-                          .chart-container {
-                            position: relative;
-                            margin: auto;
-                            height: 80vh;
-                            width: 80vw;
-                          }
-                        </style>
-                        <h4>คำถามข้อที่ 1</h4>
-                        <div class="chart-container">
-                          <canvas id="chart"></canvas>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div role="tabpanel" class="tab-pane" id="chart2">
+                  <canvas id="myChart2" width="60%" height="20%"></canvas>
                 </div>
               </div>
             </div>
-
+            <div role="tabpanel" class="tab-pane" id="design">Design Question and answer</div>
+            <div role="tabpanel" class="tab-pane" id="distribute">Option for distribute quatation</div>
+            <div role="tabpanel" class="tab-pane" id="result">Report and result</div>
           </div>
-        </section>
-      </main>
-      <!-- END Main container -->
-      
-    <!-- Scripts -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        var data = {
-          labels: ["คำตอบ 1", "คำตอบ 2", "คำตอบ 3", "คำตอบ 4"],
-          datasets: [{
-            label: "App",
-            backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
-            borderWidth: 2,
-            hoverBackgroundColor: "rgba(255,99,132,0.4)",
-            hoverBorderColor: "rgba(255,99,132,1)",
-            data: [65, 59, 20, 81],
-          },
-          {
-            label: "Web",
-            backgroundColor: "rgba(99,99,132,0.2)",
-            borderColor: "rgba(99,99,132,1)",
-            borderWidth: 2,
-            hoverBackgroundColor: "rgba(99,99,132,0.4)",
-            hoverBorderColor: "rgba(99,99,132,1)",
-            data: [12, 25, 10, 30],
-          }]
-        };
+        </div>
 
-        var options = {
-          maintainAspectRatio: false,
-          scales: {
-            yAxes: [{
-              stacked: true,
-              gridLines: {
-                display: true,
-                color: "rgba(255,99,132,0.2)"
-              },
-              ticks: {
-                beginAtZero: true
-              }
-            }],
-            xAxes: [{
-              gridLines: {
-                display: false
-              },
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        };
 
-        Chart.Bar('chart', {
-          type: 'bar',
-          options: options,
-          data: data
+
+        <script>
+          var ctx = document.getElementById("myChart").getContext('2d');
+          var ctx2 = document.getElementById("myChart2").getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ["July", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              datasets: [{
+                label: ['No. of Votes'],
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          var myLineChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
+                datasets: [
+                    {
+                        label: "12/11/2017",
+                        fillColor: "rgba(88, 99, 132, 0.2)",
+                        strokeColor: "rgba(54, 162, 235, 0.2)",
+                        pointColor: "rgba(54,220,220,1)",
+                        pointStrokeColor: "#F7464A",
+                        pointHighlightFill: "#46BFBD",
+                        pointHighlightStroke: "rgba(54,220,220,1)",
+                        data: [65, 59, 80, 81, 56, 55, 40], 
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)'
+                    },
+                    {
+                        label: "13/11/2017",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#46BFBD",
+                        pointHighlightFill: "#F7464A",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }    
         });
-      });
-    </script>
-  </body>
+
+
+        </script>
+
+      </div>
+    </section>
+  </main>
+  <!-- END Main container -->
+
+  <!-- Scripts -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
 </html>
