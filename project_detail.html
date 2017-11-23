@@ -103,96 +103,417 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="overview">
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                  <a href="#overview2" aria-controls="home" role="tab" data-toggle="tab">Overall</a>
-                </li>
-                <li role="presentation">
-                  <a href="#chart2" aria-controls="home" role="tab" data-toggle="tab">By Day</a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="overview2">
-                  <canvas id="myChart" width="60%" height="20%"></canvas>
+              <div class="form form-horizontal">
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Created on</label>
+                  <div>20/11/2017</div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="chart2">
-                  <canvas id="myChart2" width="60%" height="20%"></canvas>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Question</label>
+                  <div>4</div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Total Responses</label>
+                  <div>56</div>
                 </div>
               </div>
+              <h4>Responses Volume</h4>
+              <canvas id="myChart2" width="60%" height="20%"></canvas>
             </div>
-            <div role="tabpanel" class="tab-pane" id="design">Design Question and answer</div>
-            <div role="tabpanel" class="tab-pane" id="distribute">Option for distribute quatation</div>
-            <div role="tabpanel" class="tab-pane" id="result">Report and result</div>
+            <div role="tabpanel" class="tab-pane" id="design">
+              <form class="form form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Subject</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="แบบสอบถามร้านอาหารญี่ปุ่น" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Cover Image</label>
+                  <div class="col-md-6">
+                    <input type="file" class="form-control" value="" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                    <button type="submit" class="btn btn-primary">Save change</button>
+                  </div>
+                </div>
+              </form>
+              <h4>Question list</h4>
+              <style>
+              .question-group{
+                border:1px solid #ddd;
+                padding:20px;
+                margin-bottom:20px;
+              }
+              </style>
+              <div class="question-group form form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Answer Type</label>
+                  <div class="col-md-4">
+                    <select class="form-control">
+                      <option>Text single choice</option>
+                      <option>Image single choice</option>
+                      <option>Text multiple choice</option>
+                      <option>Image multiple choice</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Question</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My Question 1">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h4 class="col-md-3 control-label">Answer list</h4>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 1</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 1." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 2</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 2." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 3</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 3." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 4</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 4." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                    <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="question-group form form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Answer Type</label>
+                  <div class="col-md-4">
+                    <select class="form-control">
+                      <option>Text single choice</option>
+                      <option>Image single choice</option>
+                      <option>Text multiple choice</option>
+                      <option>Image multiple choice</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Question</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My Question 1">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h4 class="col-md-3 control-label">Answer list</h4>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 1</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 1." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 2</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 2." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 3</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 3." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 4</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 4." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                    <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="question-group form form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Answer Type</label>
+                  <div class="col-md-4">
+                    <select class="form-control">
+                      <option>Text single choice</option>
+                      <option>Image single choice</option>
+                      <option>Text multiple choice</option>
+                      <option>Image multiple choice</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Question</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My Question 1">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h4 class="col-md-3 control-label">Answer list</h4>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 1</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 1." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 2</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 2." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 3</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 3." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Answer 4</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="My answer 4." />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-6">
+                    <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more question</button>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="distribute">
+              <h2>Distribute</h2>
+              <form class="form form-horizontal">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Channel</label>
+                  <div class="col-md-6">
+                    <div>
+                      <label class="form-control-static">
+                        <input type="radio" name="use_voter" value="yes" checked="checked" />
+                        HandUp voter
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input type="radio" name="use_voter" value="no" />
+                        Event code, QR Code
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <h4>Limit HandUp Voter</h4>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Point per vote</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input type="number" class="form-control text-right" name="" placeholder="" value="0">
+                      <span class="input-group-addon">Points</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Max Voter</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input type="number" class="form-control text-right" name="" placeholder="leave blank or 0 if no limit voter" value="0">
+                      <span class="input-group-addon">Voters</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Last Vote Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                      <input type="text" class="form-control" name="" placeholder="leave blank if no close vote date">
+                    </div>
+                  </div>
+                </div>
+                <h4>HandUp Voter Filter</h4>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Age</label>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control" value="12" />
+                      <span class="input-group-addon">-</span>
+                      <input type="text" class="form-control" value="60" />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Gender</label>
+                  <div class="col-md-4">
+                    <select class="form-control">
+                      <option>All</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-4">
+                    <button type="submit" class="btn btn-success">Save change</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="result">
+              <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active">
+                    <a href="#report" aria-controls="home" role="tab" data-toggle="tab">Report</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#vote_data" aria-controls="home" role="tab" data-toggle="tab">Vote Data</a>
+                  </li>
+                </ul>
+                <div class="tab-content" style="padding:20px 0;">
+                  <div role="tabpanel" class="tab-pane active" id="report">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="input-group">
+
+                          <span class="input-group-addon">group by</span>
+                          <select class="form-control">
+                            <option>None</option>
+                            <option>Age</option>
+                            <option>Gender</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <h4>Q1: Question 1</h4>
+                    <div class="chart-container">
+                      <canvas id="chart_1" width="60%" height="20%"></canvas>
+                    </div>
+                    <h4>Q2: Question 2</h4>
+                    <div class="chart-container">
+                      <canvas id="chart_2" width="60%" height="20%"></canvas>
+                    </div>
+                    <h4>Q3: Question 3</h4>
+                    <div class="chart-container">
+                      <canvas id="chart_3" width="60%" height="20%"></canvas>
+                    </div>
+                    <h4>Q4: Question 4</h4>
+                    <div class="chart-container">
+                      <canvas id="chart_4" width="60%" height="20%"></canvas>
+                    </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="vote_data">
+                    <a href="#" class="btn btn-primary"><i class="fa fa-download"></i> Download Excel</a>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Q1</th>
+                            <th>Q2</th>
+                            <th>Q3</th>
+                            <th>Q4</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>20 Nov. 2017</td>
+                            <td>33</td>
+                            <td>Male</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>20 Nov. 2017</td>
+                            <td>47</td>
+                            <td>Male</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>2</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>20 Nov. 2017</td>
+                            <td>22</td>
+                            <td>Female</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
-
-
-
-        <script>
-          var ctx = document.getElementById("myChart").getContext('2d');
-          var ctx2 = document.getElementById("myChart2").getContext('2d');
-          var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: ["July", "Aug", "Sep", "Oct", "Nov", "Dec"],
-              datasets: [{
-                label: ['No. of Votes'],
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-              }]
-            },
-            options: {
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    beginAtZero: true
-                  }
-                }]
-              }
-            }
-          });
-
-          var myLineChart = new Chart(ctx2, {
-            type: 'line',
-            data: {
-                labels: ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-                datasets: [
-                    {
-                        label: "No of Votes",
-                        fillColor: "rgba(88, 99, 132, 0.2)",
-                        strokeColor: "rgba(54, 162, 235, 0.2)",
-                        pointColor: "rgba(54,220,220,1)",
-                        pointStrokeColor: "#F7464A",
-                        pointHighlightFill: "#46BFBD",
-                        pointHighlightStroke: "rgba(54,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40], 
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)'
-                    }
-                ]
-            },
-            options: {
-                responsive: true
-            }    
-        });
-
-
-        </script>
 
       </div>
     </section>
@@ -202,6 +523,110 @@
   <!-- Scripts -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  
+  <script>
+    //var ctx = document.getElementById("myChart").getContext('2d');
+    var ctx2 = document.getElementById("myChart2").getContext('2d');
+    /*var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["July", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: ['No. of Votes'],
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+*/
+    var myLineChart = new Chart(ctx2, {
+      type: 'line',
+      data: {
+          labels: ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
+          datasets: [
+              {
+                  label: "No of Votes",
+                  fillColor: "rgba(88, 99, 132, 0.2)",
+                  strokeColor: "rgba(54, 162, 235, 0.2)",
+                  pointColor: "rgba(54,220,220,1)",
+                  pointStrokeColor: "#F7464A",
+                  pointHighlightFill: "#46BFBD",
+                  pointHighlightStroke: "rgba(54,220,220,1)",
+                  data: [65, 59, 80, 81, 56, 55, 40], 
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)'
+              }
+          ]
+      },
+      options: {
+          responsive: true
+      }
+  });
+
+  $(document).ready(function(){
+    var data = {
+      labels: ["คำตอบ 1", "คำตอบ 2", "คำตอบ 3", "คำตอบ 4"],
+      datasets: [{
+        label: "Voter",
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 2,
+        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+        hoverBorderColor: "rgba(255,99,132,1)",
+        data: [3, 2, 5, 1],
+      }]
+    };
+    var options = {
+      responsive: true,
+    };
+    Chart.Bar('chart_1', {
+      type: 'bar',
+      options: options,
+      data: data
+    });
+    Chart.Bar('chart_2', {
+      type: 'bar',
+      options: options,
+      data: data
+    });
+    Chart.Bar('chart_3', {
+      type: 'bar',
+      options: options,
+      data: data
+    });
+    Chart.Bar('chart_4', {
+      type: 'bar',
+      options: options,
+      data: data
+    });
+  });
+
+  </script>
 </body>
 
 </html>
