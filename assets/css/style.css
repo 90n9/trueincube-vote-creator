@@ -3,7 +3,7 @@ body{
   font-size: 16px;
   line-height: 28px;
   color: #7e8890;
-  background-color: #e5e7ed;
+  background-color: #FF2A00;
 }
 body.bg-alt {
   background-color: #fafafa;
@@ -77,11 +77,11 @@ h4 {
   color: #96a2b2;
 }
 .login-links a {
-  color: #96a2b2;
+  color: #dddddd;
   opacity: .9;
 }
 .login-links a:hover {
-  color: #ec312e;
+  color: #ffffff;
   opacity: 1;
 }
 
