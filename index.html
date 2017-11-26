@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="app">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=login.html" />
-    <script type="text/javascript">
-      window.location.href = "login.html"
-    </script>
-    <title>HandUp Creator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="HandUp Creator - Vote platform">
+    <meta name="author" content="Narathip Harijiratiwong">
+    <meta name="keyword" content="HandUp, Hand Up, Vote, Quatation">
+    <title ng-bind="'HandUp Creator &mdash; ' + title">HandUp Creator</title>
+    <!-- Styles -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/themify-icons/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit:400,700&amp;subset=thai" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
   </head>
   <body>
-      If you are not redirected automatically, follow this <a href='login.html'>link to example</a>.
+    <!-- User Interface -->
+    <ui-view class="app"></ui-view>
+    <!-- Bootstrap and necessary plugins -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <!-- AngularJS plugins -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!--script src="vendors/js/angular-animate.min.js"></script>
+    <script src="vendors/js/angular-sanitize.min.js"></script>
+    <script src="vendors/js/angular-ui-router.min.js"></script>
+    <script src="vendors/js/ocLazyLoad.min.js"></script>
+    <script src="vendors/js/angular-breadcrumb.min.js"></script>
+    <script src="vendors/js/loading-bar.min.js"></script-->
+
+    <!-- AngularJS CoreUI App scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <script src="app/controllers.js"></script>
+    <script src="app/directives.js"></script>
   </body>
 </html>

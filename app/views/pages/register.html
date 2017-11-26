@@ -1,0 +1,49 @@
+<main>
+    <div class="login-block">
+      <img src="assets/img/logo.png" alt="">
+      <h1>สมัครสมาชิก</h1>
+
+      <form name="form" novalidate>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="ti-user"></i></span>
+            <input type="text" class="form-control" placeholder="ชื่อของคุณ">
+          </div>
+        </div>
+        
+        <hr class="hr-xs">
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="ti-email"></i></span>
+            <input type="text" class="form-control" placeholder="อีเมล">
+          </div>
+        </div>
+        
+        <hr class="hr-xs">
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="ti-unlock"></i></span>
+            <input type="password" class="form-control" placeholder="รหัสผ่าน">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-main btn-block" ng-click="register(user)">ดำเนินการต่อ</button>
+
+        <div class="login-footer">
+          <h6>หรือสมัครสมาชิกด้วย</h6>
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="google" href="#"><i class="fa fa-google"></i></a></li>
+          </ul>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="login-links">
+      <p class="text-center">เป็นสมาชิกอยู่แล้ว? <a class="txt-brand" ui-sref="appSimple.login">เข้าสู่ระบบ</a></p>
+    </div>
+  </main>

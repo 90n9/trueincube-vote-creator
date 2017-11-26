@@ -1,0 +1,94 @@
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active">
+    <a href="#report" aria-controls="home" role="tab" data-toggle="tab">Report</a>
+  </li>
+  <li role="presentation">
+    <a href="#vote_data" aria-controls="home" role="tab" data-toggle="tab">Vote Data</a>
+  </li>
+</ul>
+<div class="tab-content" style="padding:20px 0;">
+  <div role="tabpanel" class="tab-pane active" id="report">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+
+          <span class="input-group-addon">group by</span>
+          <select class="form-control">
+            <option>None</option>
+            <option>Age</option>
+            <option>Gender</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <h4>Q1: Question 1</h4>
+    <div class="chart-container">
+      <canvas id="chart_1" width="60%" height="20%"></canvas>
+    </div>
+    <h4>Q2: Question 2</h4>
+    <div class="chart-container">
+      <canvas id="chart_2" width="60%" height="20%"></canvas>
+    </div>
+    <h4>Q3: Question 3</h4>
+    <div class="chart-container">
+      <canvas id="chart_3" width="60%" height="20%"></canvas>
+    </div>
+    <h4>Q4: Question 4</h4>
+    <div class="chart-container">
+      <canvas id="chart_4" width="60%" height="20%"></canvas>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="vote_data">
+    <a href="#" class="btn btn-primary"><i class="fa fa-download"></i> Download Excel</a>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>20 Nov. 2017</td>
+            <td>33</td>
+            <td>Male</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>20 Nov. 2017</td>
+            <td>47</td>
+            <td>Male</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>20 Nov. 2017</td>
+            <td>22</td>
+            <td>Female</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

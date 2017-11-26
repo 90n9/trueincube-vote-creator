@@ -1,0 +1,30 @@
+<div ng-include="'app/views/projectdetail/header.html'"></div>
+<!-- Main container -->
+  <main>
+    <section class="no-padding-top bg-alt">
+      <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a ui-sref="app.projectdetail.overview({projectId:projectId})">Overview</a>
+          </li>
+          <li role="presentation">
+            <a ui-sref="app.projectdetail.design({projectId:projectId})">Design</a>
+          </li>
+          <li role="presentation">
+            <a ui-sref="app.projectdetail.distribute({projectId:projectId})">Distribute</a>
+          </li>
+          <li role="presentation">
+            <a ui-sref="app.projectdetail.result({projectId:projectId})">Result</a>
+          </li>
+        </ul>
+        <div style="background-color:#fff;padding:20px;border:1px solid #ddd;border-top:none;">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <ui-view></ui-view>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>

@@ -1,0 +1,74 @@
+<h2>Distribute</h2>
+<form class="form form-horizontal">
+  <div class="form-group">
+    <label class="col-md-3 control-label">Channel</label>
+    <div class="col-md-6">
+      <div>
+        <label class="form-control-static">
+          <input type="radio" name="use_voter" value="yes" checked="checked" />
+          HandUp voter
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="use_voter" value="no" />
+          Event code, QR Code
+        </label>
+      </div>
+    </div>
+  </div>
+  <h4>Limit HandUp Voter</h4>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Point per vote</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="number" class="form-control text-right" name="" placeholder="" value="0">
+        <span class="input-group-addon">Points</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Max Voter</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="number" class="form-control text-right" name="" placeholder="leave blank or 0 if no limit voter" value="0">
+        <span class="input-group-addon">Voters</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Last Vote Date</label>
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        <input type="text" class="form-control" name="" placeholder="leave blank if no close vote date">
+      </div>
+    </div>
+  </div>
+  <h4>HandUp Voter Filter</h4>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Age</label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <input type="text" class="form-control" value="12" />
+        <span class="input-group-addon">-</span>
+        <input type="text" class="form-control" value="60" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Gender</label>
+    <div class="col-md-4">
+      <select class="form-control">
+        <option>All</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-4">
+      <button type="submit" class="btn btn-success">Save change</button>
+    </div>
+  </div>
+</form>
