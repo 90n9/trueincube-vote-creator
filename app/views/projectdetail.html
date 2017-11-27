@@ -5,20 +5,20 @@
       <div class="container">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active">
+          <li role="presentation" ng-class="{ active: $state.includes('app.projectdetail.overview') }">
             <a ui-sref="app.projectdetail.overview({projectId:projectId})">Overview</a>
           </li>
-          <li role="presentation">
+          <li role="presentation" ng-class="{ active: $state.includes('app.projectdetail.design') }">
             <a ui-sref="app.projectdetail.design({projectId:projectId})">Design</a>
           </li>
-          <li role="presentation">
+          <li role="presentation" ng-class="{ active: $state.includes('app.projectdetail.distribute') }">
             <a ui-sref="app.projectdetail.distribute({projectId:projectId})">Distribute</a>
           </li>
-          <li role="presentation">
+          <li role="presentation" ng-class="{ active: $state.includes('app.projectdetail.result') }">
             <a ui-sref="app.projectdetail.result({projectId:projectId})">Result</a>
           </li>
         </ul>
-        <div style="background-color:#fff;padding:20px;border:1px solid #ddd;border-top:none;">
+        <div style="background-color:#fff;padding:20px;border:1px solid #ddd;border-top:none;" id="project-detail-content">
           <!-- Tab panes -->
           <div class="tab-content">
             <ui-view></ui-view>
