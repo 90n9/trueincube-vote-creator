@@ -2,7 +2,7 @@
   <div class="form-group">
     <label class="col-md-3 control-label">Subject</label>
     <div class="col-md-6">
-      <input type="text" class="form-control" value="แบบสอบถามร้านอาหารญี่ปุ่น" />
+      <input type="text" class="form-control" value="แบบสอบถามร้านอาหารญี่ปุ่น" ng-model="project.subject" />
     </div>
   </div>
   <div class="form-group">
@@ -25,195 +25,43 @@
   margin-bottom:20px;
 }
 </style>
-<div class="question-group form form-horizontal">
+<div class="question-group form form-horizontal" ng-repeat="question in project.questionList">
   <div class="form-group">
     <label class="col-md-3 control-label">Answer Type</label>
     <div class="col-md-4">
-      <select class="form-control">
-        <option>Text single choice</option>
-        <option>Image single choice</option>
-        <option>Text multiple choice</option>
-        <option>Image multiple choice</option>
+      <select class="form-control" ng-model="question.choiceType">
+        <option value="single_text">Text single choice</option>
+        <option value="single_image">Image single choice</option>
+        <option value="multiple_text">Text multiple choice</option>
+        <option value="multiple_image">Image multiple choice</option>
       </select>
     </div>
   </div>
   <div class="form-group">
-    <label for="" class="col-md-3 control-label">Question</label>
+    <label for="" class="col-md-3 control-label">Question {{$index + 1}}</label>
     <div class="col-md-6">
-      <input type="text" class="form-control" value="My Question 1">
+      <input type="text" class="form-control" ng-model="question.question">
     </div>
   </div>
   <div class="form-group">
     <h4 class="col-md-3 control-label">Answer list</h4>
   </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 1</label>
+  <div class="form-group" ng-repeat="answer in question.answerList">
+    <label for="" class="col-md-3 control-label">Answer {{$index + 1}}</label>
     <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 1." />
+      <input type="text" class="form-control" ng-model="answer.answer" />
     </div>
     <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 2</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 2." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 3</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 3." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 4</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 4." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
+      <button class="btn btn-danger" ng-click="removeAnswer(question, answer)"><i class="fa fa-times"></i> Remove</button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-offset-3 col-md-6">
-      <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
-    </div>
-  </div>
-</div>
-<div class="question-group form form-horizontal">
-  <div class="form-group">
-    <label class="col-md-3 control-label">Answer Type</label>
-    <div class="col-md-4">
-      <select class="form-control">
-        <option>Text single choice</option>
-        <option>Image single choice</option>
-        <option>Text multiple choice</option>
-        <option>Image multiple choice</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Question</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My Question 1">
-    </div>
-  </div>
-  <div class="form-group">
-    <h4 class="col-md-3 control-label">Answer list</h4>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 1</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 1." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 2</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 2." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 3</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 3." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 4</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 4." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-3 col-md-6">
-      <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
-    </div>
-  </div>
-</div>
-<div class="question-group form form-horizontal">
-  <div class="form-group">
-    <label class="col-md-3 control-label">Answer Type</label>
-    <div class="col-md-4">
-      <select class="form-control">
-        <option>Text single choice</option>
-        <option>Image single choice</option>
-        <option>Text multiple choice</option>
-        <option>Image multiple choice</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Question</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My Question 1">
-    </div>
-  </div>
-  <div class="form-group">
-    <h4 class="col-md-3 control-label">Answer list</h4>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 1</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 1." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 2</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 2." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 3</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 3." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-md-3 control-label">Answer 4</label>
-    <div class="col-md-6">
-      <input type="text" class="form-control" value="My answer 4." />
-    </div>
-    <div class="col-md-3">
-      <button class="btn btn-danger"><i class="fa fa-times"></i> Remove</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-3 col-md-6">
-      <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more answer</button>
+      <button type="button" class="btn btn-success" ng-click="addAnswer(question)"><i class="fa fa-plus"></i> Add more answer</button>
+      <button type="button" class="btn btn-danger" ng-click="removeQuestion(question)"><i class="fa fa-minus"></i> Remove question</button>
     </div>
   </div>
 </div>
 <div class="text-center">
-  <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add more question</button>
+  <button type="button" class="btn btn-success" ng-click="addQuestion()"><i class="fa fa-plus"></i> Add more question</button>
 </div>

@@ -1,7 +1,15 @@
 angular
 .module('app')
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-
+.config(['$stateProvider', '$urlRouterProvider', 'ChartJsProvider', function($stateProvider, $urlRouterProvider, ChartJsProvider) {
+  ChartJsProvider.setOptions({
+    scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero: true
+          }
+      }]
+    }
+  });
   $urlRouterProvider.otherwise('/login');
 
   $stateProvider
@@ -24,8 +32,20 @@ angular
     url: '/project',
     title: 'Project List',
     templateUrl: 'app/views/projectlist.html',
-    controller: function(){
+    controller: function($scope, $uibModal){
+      $ctrl = this;
       console.log('call project list');
+      $scope.open_new_project = function(){
+        console.log('open project modal');
+        var modalInstance = $uibModal.open({
+          animation: $ctrl.animationsEnabled,
+          ariaLabelledBy: 'modal-title',
+          ariaDescribedBy: 'modal-body',
+          templateUrl: 'app/views/projectlist/modal_new_project.html',
+          controller: 'ModalInstanceCtrl',
+          controllerAs: '$ctrl',
+        });
+      }
     }
   })
   .state('app.projectdetail',{
@@ -35,7 +55,6 @@ angular
     templateUrl: 'app/views/projectdetail.html',
     controller: function($scope, $stateParams, $state){
       $scope.projectId = $stateParams.projectId;
-      //$state.go('app.projectdetail.overview', {projectId:$scope.projectId}, {reload:true});
     },
   })
   .state('app.projectdetail.overview',{
@@ -45,8 +64,12 @@ angular
     templateUrl: 'app/views/projectdetail/overview.html',
     controller: function($scope, $stateParams){
       $scope.projectId = $stateParams.projectId;
-      console.log('overview');
-      console.log($scope.projectId);
+      $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+      $scope.series = ['Each', 'Total'];
+      $scope.data = [
+        [28, 48, 40, 19, 86, 27, 90],
+        [28, 76, 116, 135, 221, 248, 338],
+      ];
     }
   })
   .state('app.projectdetail.design',{
@@ -56,6 +79,50 @@ angular
     templateUrl: 'app/views/projectdetail/design.html',
     controller: function($scope, $stateParams){
       $scope.projectId = $stateParams.projectId;
+      $scope.project = {
+        subject : '',
+        questionList : [{
+          question: 'Question 1',
+          choiceType: 'single_image',
+          answerList: [
+            {answer:'Answer 1.1'},
+            {answer:'Answer 1.2'},
+            {answer:'Answer 1.3'},
+            {answer:'Answer 1.4'},
+          ]
+        },{
+          question: 'Question 2',
+          choiceType: 'single_text',
+          answerList: [
+            {answer:'Answer 2.1'},
+            {answer:'Answer 2.2'},
+            {answer:'Answer 2.3'},
+          ]
+        }]
+      };
+      $scope.addAnswer = function(question){
+        question.answerList.push({answer:''});
+      };
+      $scope.addQuestion = function(){
+        $scope.project.questionList.push({
+          question: '',
+          choiceType: 'single_image',
+          answerList: [
+            {answer:''},
+            {answer:''},
+          ]
+        });
+      };
+      $scope.removeAnswer = function(question, answer){
+        question.answerList = question.answerList.filter(function(el) {
+          return el !== answer;
+        });
+      }
+      $scope.removeQuestion = function(question){
+        $scope.project.questionList = $scope.project.questionList.filter(function(el) {
+          return el !== question;
+        });
+      }
       console.log('design');
       console.log($scope.projectId);
     }
@@ -67,8 +134,18 @@ angular
     templateUrl: 'app/views/projectdetail/distribute.html',
     controller: function($scope, $stateParams){
       $scope.projectId = $stateParams.projectId;
-      console.log('distribute');
-      console.log($scope.projectId);
+      $scope.dateOptions = {
+        formatYear: 'yy',
+        maxDate: new Date(2020, 5, 22),
+        minDate: new Date(),
+        startingDay: 1
+      };  
+      $scope.popup2 = {
+        opened: false
+      };
+      $scope.openDatePicker = function(){
+        $scope.popup2.opened = true;
+      }
     }
   })
   .state('app.projectdetail.result',{
@@ -78,6 +155,25 @@ angular
     templateUrl: 'app/views/projectdetail/result.html',
     controller: function($scope, $stateParams){
       $scope.projectId = $stateParams.projectId;
+      $scope.report = {
+        questionList : [{
+          question: 'Question 1',
+          labels : ['answer 1', 'answer 2', 'answer 3', 'answer 4'],
+          series : ['Male', 'Female'],
+          data : [
+            [30,105,52,89],
+            [50,72,95,17]
+          ],
+        },{
+          question: 'Question 2',
+          labels : ['answer 1', 'answer 2', 'answer 3', 'answer 4'],
+          series : ['Voter'],
+          data : [
+            [75, 64, 33, 22],
+            [42, 56, 84, 42]
+          ],
+        }]
+      };
       console.log('result');
       console.log($scope.projectId);
     }

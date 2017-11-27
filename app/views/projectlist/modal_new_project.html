@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="modal-title">เพิ่มแบบสอบถามใหม่</h3>
+</div>
+<form name="form" novalidate>
+  <div class="modal-body" id="modal-body">
+    <div class="form-group">
+      <lable class="control-label">ชื่อแบบสอบถาม</lable>
+      <div>
+        <input type="text" class="form-control" placeholder="ชื่อแบบสอบถาม" ng-model="project.subject" />
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit" ng-click="new_project(project)">บันทึก</button>
+    <button class="btn btn-warning" type="button" ng-click="close_new_project()">ปิด</button>
+  </div>
+</form>

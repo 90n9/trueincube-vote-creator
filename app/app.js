@@ -1,8 +1,11 @@
 angular.module('app', [
-  'ui.router'
+  'ui.router',
+  'ngAnimate',
+  'ui.bootstrap',
+  'chart.js',
 ])
 .run(['$rootScope', '$state', '$stateParams', '$transitions', function($rootScope, $state, $stateParams, $transitions){
-  $transitions.onSuccess({}, function() {
+  $transitions.onFinish({}, function() {
     $rootScope.title = $state.current.title;
     if($state.current.name.indexOf("projectdetail") == -1){
       document.body.scrollTop = document.documentElement.scrollTop = 0;

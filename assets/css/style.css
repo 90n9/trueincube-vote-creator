@@ -492,3 +492,28 @@ section {
 }
 
 /*end project list*/
+
+/*animate change page*/
+.app, .animation{
+  display:block;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.app.ng-enter, .animation.ng-enter{
+  opacity: 0;
+}
+.app.ng-enter-active, .animation.ng-enter-active{
+  opacity: 1;
+}
+
+.app.ng-leave, .animation.ng-leave{
+  opacity: 1;
+}
+
+.app.ng-leave-active, .animation.ng-leave-active{
+  opacity: 0;
+}
+/*end animate change page*/

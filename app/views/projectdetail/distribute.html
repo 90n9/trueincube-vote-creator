@@ -40,8 +40,8 @@
     <label class="col-md-3 control-label">Last Vote Date</label>
     <div class="col-md-4">
       <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-        <input type="text" class="form-control" name="" placeholder="leave blank if no close vote date">
+        <span class="input-group-addon" ng-click="openDatePicker()"><i class="fa fa-calendar"></i></span>
+        <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder="leave blank if no close vote date">
       </div>
     </div>
   </div>
