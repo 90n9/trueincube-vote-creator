@@ -40,12 +40,12 @@ angular
         $scope.responseData = response;
         $scope.projectList = [{
           _id: '1',
-          subject: 'แบบสอบถามร้านอาหารญี่ปุ่น',
+          subject: 'The Mask Singer 3',
           point: '20'
         },{
           _id: '2',
-          subject: 'Project 2',
-          point: '30'
+          subject: 'The Voice Season 6',
+          point: '20'
         }]
         console.log(response);
       }, function(error){
@@ -98,7 +98,7 @@ angular
     controller: function($scope, $stateParams){
       $scope.projectId = $stateParams.projectId;
       $scope.project = {
-        subject : '',
+        subject : 'The Mask Singer 3',
         questionList : [{
           question: 'โหวตหน้ากากที่คุณอยากให้ไปต่อ',
           choiceType: 'single_image',
@@ -210,10 +210,10 @@ angular
       $scope.login = function(user) {
         console.log(user);
         $scope.loading = true;
+        $state.go('app.projectlist', null, {reload:true});
         /*
         AuthenticationService.Login(user.email, user.password, function (result) {
           if (result === true) {
-            $state.go('app.projectlist', null, {reload:true});
           } else {
             $scope.error = 'Email or password is incorrect';
             $scope.loading = false;
