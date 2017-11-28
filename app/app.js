@@ -3,6 +3,7 @@ angular.module('app', [
   'ngAnimate',
   'ui.bootstrap',
   'chart.js',
+  'angular-jwt',
 ])
 .run(['$rootScope', '$state', '$stateParams', '$transitions', function($rootScope, $state, $stateParams, $transitions){
   $transitions.onFinish({}, function() {

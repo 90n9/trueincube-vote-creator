@@ -1,6 +1,7 @@
 angular
 .module('app')
-.config(['$stateProvider', '$urlRouterProvider', 'ChartJsProvider', function($stateProvider, $urlRouterProvider, ChartJsProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'ChartJsProvider', function($stateProvider, $urlRouterProvider, $httpProvider, ChartJsProvider) {
+
   ChartJsProvider.setOptions({
     scales: {
       yAxes: [{
@@ -32,8 +33,25 @@ angular
     url: '/project',
     title: 'Project List',
     templateUrl: 'app/views/projectlist.html',
-    controller: function($scope, $uibModal){
+    controller: function($scope, $uibModal, $http, APIPath){
       $ctrl = this;
+      $http.get(APIPath.path+'project')
+      .then(function(response){
+        $scope.responseData = response;
+        $scope.projectList = [{
+          _id: '1',
+          subject: 'แบบสอบถามร้านอาหารญี่ปุ่น',
+          point: '20'
+        },{
+          _id: '2',
+          subject: 'Project 2',
+          point: '30'
+        }]
+        console.log(response);
+      }, function(error){
+        $scope.responseData = error;
+        console.log(error);
+      });
       console.log('call project list');
       $scope.open_new_project = function(){
         console.log('open project modal');
@@ -82,21 +100,18 @@ angular
       $scope.project = {
         subject : '',
         questionList : [{
-          question: 'Question 1',
+          question: 'โหวตหน้ากากที่คุณอยากให้ไปต่อ',
           choiceType: 'single_image',
           answerList: [
-            {answer:'Answer 1.1'},
-            {answer:'Answer 1.2'},
-            {answer:'Answer 1.3'},
-            {answer:'Answer 1.4'},
+            {answer:'หน้ากากหมาป่า'},
+            {answer:'หน้ากากไก่ชน'},
           ]
         },{
-          question: 'Question 2',
+          question: 'โหวตหน้ากากที่คุณอยากให้ไปต่อ',
           choiceType: 'single_text',
           answerList: [
-            {answer:'Answer 2.1'},
-            {answer:'Answer 2.2'},
-            {answer:'Answer 2.3'},
+            {answer:'หน้ากากไอยรา'},
+            {answer:'หน้ากากเตียงนอน'},
           ]
         }]
       };
@@ -190,21 +205,43 @@ angular
     url: '/login',
     title: 'Login',
     templateUrl: 'app/views/pages/login.html',
-    controller: function($scope, $state){
+    controller: function($scope, $state, $http, APIPath){
+      console.log(APIPath);
       $scope.login = function(user) {
         console.log(user);
-        $state.go('app.projectlist', null, {reload:true});
-      };    
+        $scope.loading = true;
+        /*
+        AuthenticationService.Login(user.email, user.password, function (result) {
+          if (result === true) {
+            $state.go('app.projectlist', null, {reload:true});
+          } else {
+            $scope.error = 'Email or password is incorrect';
+            $scope.loading = false;
+          }
+        });
+        */
+      };
     }
   })
   .state('appSimple.register', {
     url: '/register',
     title: 'Register',
     templateUrl: 'app/views/pages/register.html',
-    controller: function($scope, $state){
+    controller: function($scope, $state, $http, APIPath){
+      $scope.error = '';
+      $scope.loading = false;
       $scope.register = function(user) {
-        console.log(user);
         $state.go('app.projectlist', null, {reload:true});
+        /*
+        $scope.loading = true;
+        AuthenticationService.Login(user.email, user.password, function (result) {
+          if (result === true) {
+          } else {
+            $scope.error = 'Email or password is incorrect';
+            $scope.loading = false;
+          }
+        });
+        */
       };    
     }
   })
